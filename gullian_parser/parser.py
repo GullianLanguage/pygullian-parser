@@ -191,7 +191,7 @@ class Comptime:
 class Call:
     name: Name
     arguments: list["Expression"]
-    generics: list
+    generic: list
     declaration: FunctionDeclaration=None
 
     @property
@@ -339,9 +339,12 @@ class Parser:
             arguments.append(self.parse_expression(token))
         
         if type(name) is Subscript:
-            return Call(name.head, arguments, name.items)
+            generic = name.items
+            name = name.head
+        else:
+            generic = list()
 
-        return Call(name, arguments, list())
+        return Call(name, arguments, generic)
     
     def parse_struct_literal(self, name: Name):
         arguments = []
