@@ -9,8 +9,8 @@ readme = "README.md"
 requires-python = ">=3.10"
 
 [project.urls]
-"Homepage" = "https://github.com/GullianLanguage/pygullian_parser"
-"Bug Tracker" = "https://github.com/GullianLanguage/pygullian_parser/issues"
+"Homepage" = "https://github.com/GullianLanguage/pygullian-parser"
+"Bug Tracker" = "https://github.com/GullianLanguage/pygullian-parser/issues"
 
 [build-system]
 requires = ["hatchling"]
