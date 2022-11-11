@@ -22,7 +22,7 @@ class Body:
 @dataclass
 class FunctionHead:
     name: "Name | Subscript"
-    arguments: list[tuple[Name, "Expression"]]
+    parameters: list[tuple[Name, "Expression"]]
     return_hint: Name
     generic: list
 
@@ -482,7 +482,7 @@ class Parser:
         if not (type(token) is Token and token.kind is TokenKind.LeftParenthesis):
             raise TypeError(f"expecting '(', found '{token.format}' before argument list of function {name}. at line {token.line}")
         
-        arguments = []
+        parameters = []
 
         for token in self.source:
             if type(token) is Token and token.kind is TokenKind.RightParenthesis:
@@ -499,7 +499,7 @@ class Parser:
             if not (type(colon) is Token and colon.kind is TokenKind.Colon):
                 raise SyntaxError(f"expecting ':' before parameter type of {token}. in module {self.module_name}")
             
-            arguments.append((token, self.parse_expression(self.source.capture())))
+            parameters.append((token, self.parse_expression(self.source.capture())))
         
         colon = self.source.capture()
             
@@ -514,7 +514,7 @@ class Parser:
         else:
             generic = list()
 
-        return FunctionHead(name, arguments, return_hint, generic)
+        return FunctionHead(name, parameters, return_hint, generic)
     
     def parse_assignment(self, name: Name | Attribute, operator: Token) -> Assignment:
         return Assignment(name, operator, self.parse_expression(self.source.capture()))
