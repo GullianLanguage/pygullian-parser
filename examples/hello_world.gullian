@@ -1,0 +1,5 @@
+import std.io
+
+fun main() : int {
+    io.puts("hello, gullian!")
+}

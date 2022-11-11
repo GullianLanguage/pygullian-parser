@@ -1,0 +1,17 @@
+[project]
+name = "pygullian-parser"
+version = "0.0.1"
+authors = [
+  { name="Marcel Guinhos de Menezes", email="mguinhos@gmail.com" },
+]
+description = "A recursive descendent parser written in python for the Gullian language"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.urls]
+"Homepage" = "https://github.com/GullianLanguage/pygullian_parser"
+"Bug Tracker" = "https://github.com/GullianLanguage/pygullian_parser/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
