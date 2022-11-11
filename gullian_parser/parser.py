@@ -510,6 +510,7 @@ class Parser:
 
         if type(name) is Subscript:
             generic = name.items
+            name = name.head
         else:
             generic = list()
 
