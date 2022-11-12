@@ -100,6 +100,15 @@ TOKENKIND_ASSIGNMENTOPERATORS = {
     TokenKind.RightEqual
 }
 
+TOKENKIND_LOGICOPERATORS = {
+    TokenKind.GreaterThan,
+    TokenKind.LessThan,
+    TokenKind.NotEqual,
+    TokenKind.EqualEqual,
+    TokenKind.GreaterThanEqual,
+    TokenKind.LessThanEqual,
+}
+
 @dataclass
 class Token:
     kind: TokenKind
