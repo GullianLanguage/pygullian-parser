@@ -192,7 +192,6 @@ class Call:
     name: Name
     arguments: list["Expression"]
     generic: list
-    declaration: FunctionDeclaration=None
 
     @property
     def format(self):
