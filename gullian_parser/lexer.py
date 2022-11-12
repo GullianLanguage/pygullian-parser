@@ -100,6 +100,20 @@ TOKENKIND_ASSIGNMENTOPERATORS = {
     TokenKind.RightEqual
 }
 
+TOKENKIND_NUMERICOPERATORS = {
+    TokenKind.Plus,
+    TokenKind.Minus,
+    TokenKind.Star,
+    TokenKind.StarStar,
+    TokenKind.Slash,
+    TokenKind.Percent,
+    TokenKind.Ampersand,
+    TokenKind.Caret,
+    TokenKind.VerticalBar,
+    TokenKind.Left,  
+    TokenKind.Right,
+}
+
 TOKENKIND_LOGICOPERATORS = {
     TokenKind.GreaterThan,
     TokenKind.LessThan,
